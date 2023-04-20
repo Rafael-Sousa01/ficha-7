@@ -26,5 +26,14 @@ setupCounter(document.querySelector('#counter'))
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.0/firebase-app.js"
 import { getMessaging } from "https://www.gstatic.com/firebasejs/9.19.0/firebase-messaging.js"
 
+const firebaseConfig = {
+    apiKey: "AIzaSyCWU7Y7ULIZLuWJANCncbnafnpzsOR26Cs",
+    authDomain: "ficha-7-78d68.firebaseapp.com",
+    projectId: "ficha-7-78d68",
+    storageBucket: "ficha-7-78d68.appspot.com",
+    messagingSenderId: "954792486882",
+    appId: "1:954792486882:web:86869e4aef223cc5aefbbb"
+  };
+
 const app = initializeApp(firebaseConfig);
 const messaging = getMessaging(app);
