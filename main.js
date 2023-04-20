@@ -22,3 +22,9 @@ document.querySelector('#app').innerHTML = `
 `
 
 setupCounter(document.querySelector('#counter'))
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.0/firebase-app.js"
+import { getMessaging } from "https://www.gstatic.com/firebasejs/9.19.0/firebase-messaging.js"
+
+const app = initializeApp(firebaseConfig);
+const messaging = getMessaging(app);
