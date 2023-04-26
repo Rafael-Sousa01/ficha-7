@@ -3,6 +3,7 @@ import javascriptLogo from './javascript.svg'
 import viteLogo from '/vite.svg'
 import { setupCounter } from './counter.js'
 
+
 document.querySelector('#app').innerHTML = `
   <div>
     <a href="https://vitejs.dev" target="_blank">
@@ -24,16 +25,21 @@ document.querySelector('#app').innerHTML = `
 setupCounter(document.querySelector('#counter'))
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.0/firebase-app.js"
-import { getMessaging } from "https://www.gstatic.com/firebasejs/9.19.0/firebase-messaging.js"
+import {
+  getMessaging,
+  getToken
+} from "https://www.gstatic.com/firebasejs/9.19.0/firebase-messaging.js"
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCWU7Y7ULIZLuWJANCncbnafnpzsOR26Cs",
-    authDomain: "ficha-7-78d68.firebaseapp.com",
-    projectId: "ficha-7-78d68",
-    storageBucket: "ficha-7-78d68.appspot.com",
-    messagingSenderId: "954792486882",
-    appId: "1:954792486882:web:86869e4aef223cc5aefbbb"
-  };
+  apiKey: "AIzaSyCWU7Y7ULIZLuWJANCncbnafnpzsOR26Cs",
+  authDomain: "ficha-7-78d68.firebaseapp.com",
+  projectId: "ficha-7-78d68",
+  storageBucket: "ficha-7-78d68.appspot.com",
+  messagingSenderId: "954792486882",
+  appId: "1:954792486882:web:86869e4aef223cc5aefbbb"
+};
 
 const app = initializeApp(firebaseConfig);
 const messaging = getMessaging(app);
+
+getToken(messaging, { vapidKey: "BPuY6FfjJgj18R2uh187syKFegFZHEikq1TDePdTJ2Y9BLfqh5PU6BKMfL116yT47Neat59L5RFpt6smz2GPJKQ" })
